@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your agent | Karvya AI</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0F3D2E" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="module" src="/src/agent.js"></script>
+</head>
+<body class="app">
+  <div class="app-shell" data-shell hidden>
+    <aside class="app-side" data-side>
+      <div class="app-side-top">
+        <a class="logo" href="/" aria-label="Karvya AI home"><svg class="logo-mark" viewBox="0 0 40 50" aria-hidden="true"><g class="s"><circle cx="5" cy="5" r="4.4"/><circle cx="5" cy="15" r="4.4"/><circle cx="5" cy="25" r="4.4"/><circle cx="5" cy="35" r="4.4"/><circle cx="5" cy="45" r="4.4"/></g><g class="a"><circle cx="35" cy="5" r="4.4"/><circle cx="25" cy="15" r="4.4"/><circle cx="15" cy="25" r="4.4"/><circle cx="25" cy="35" r="4.4"/><circle cx="35" cy="45" r="4.4"/></g></svg><span>Karvya<em>AI</em></span></a>
+        <button class="app-menu" type="button" aria-expanded="false" data-menu>Menu</button>
+      </div>
+      <div class="app-side-body" data-side-body>
+        <div class="app-agent">
+          <p data-company></p>
+          <b data-agent-name></b>
+        </div>
+        <button class="btn btn-marigold btn-sm app-new" type="button" data-new>New session</button>
+        <p class="app-who">Working as <b data-who></b> <button type="button" data-switch>Switch person</button></p>
+        <section class="app-list">
+          <h2>Team’s recent work</h2>
+          <ul data-sessions></ul>
+          <p class="app-empty" data-sessions-empty>Nothing yet. Work your team does with the agent will show here.</p>
+        </section>
+        <section class="app-list">
+          <h2>Company memory</h2>
+          <ul data-memories></ul>
+          <p class="app-empty" data-memories-empty>Nothing saved yet. The agent adds to this as it learns.</p>
+        </section>
+        <div class="app-trial">
+          <div class="app-meter"><span data-meter></span></div>
+          <p data-trial></p>
+        </div>
+      </div>
+    </aside>
+    <main class="app-main">
+      <div class="chat" data-log role="log" aria-live="polite" aria-label="Conversation" tabindex="0"></div>
+      <p class="chat-banner" data-banner role="alert" hidden></p>
+      <form class="composer" data-composer>
+        <label class="sr-only" for="message">Your message</label>
+        <textarea id="message" rows="1" placeholder="Ask your agent…" data-input></textarea>
+        <button class="btn btn-ink" type="submit" data-send>Send</button>
+      </form>
+    </main>
+  </div>
+
+  <div class="app-screen" data-name-screen hidden>
+    <form class="app-card" data-name-form>
+      <h1>Who’s working today?</h1>
+      <p>Your team shares this agent, so it needs to know who it’s talking to.</p>
+      <label for="author">Your name</label>
+      <input class="input" id="author" autocomplete="name" maxlength="60" required />
+      <button class="btn btn-ink" type="submit">Continue</button>
+    </form>
+  </div>
+
+  <div class="app-screen" data-stop-screen hidden>
+    <div class="app-card">
+      <h1 data-stop-title></h1>
+      <p data-stop-text></p>
+      <a class="btn btn-ink" href="/">Back to Karvya AI</a>
+    </div>
+  </div>
+</body>
+</html>

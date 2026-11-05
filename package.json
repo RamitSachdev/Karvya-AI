@@ -1,0 +1,30 @@
+{
+  "name": "karvya-ai",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:api": "node --test tests/api.test.js tests/agent.test.js",
+    "test:e2e": "playwright test",
+    "test": "npm run test:api && npm run build && npm run test:e2e",
+    "demo": "node scripts/demo.mjs",
+    "demo:share": "node scripts/demo.mjs --share",
+    "demo:check": "node scripts/demo-check.mjs",
+    "demo:reset": "node -e \"require('fs').rmSync('.data',{recursive:true,force:true});console.log('Cleared all local requests, sessions and company memory. The record of AI spend is kept.')\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "vite": "^6.4.5"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0",
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/figtree": "^5.3.0"
+  }
+}
